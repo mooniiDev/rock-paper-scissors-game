@@ -1,51 +1,73 @@
+function play() {
+  let rounds = 0;
+  let playerScore = 0;
+  let computerScore = 0;
 
-function playerPlay() {
-  let playerSelection = prompt('∘• rock | paper | scissors •∘').toLowerCase();
-  if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors') {
-    console.log(`Your choice is ${playerSelection}.`)
-    return playerSelection;
+  while (rounds < 5) {
+    oneRound(playerPlay(), computerPlay());
+    console.log('%c•∘•∘•∘•⋆•∘•∘•∘•', 'color: #ff0080');
+    rounds++;
   }
-  console.log(`YOU CAN'T TYPE ${playerSelection}.VALID WORDS ARE  ROCK | PAPER | SCISSORS`);
-  console.log('%cTHIS ROUND OF THE GAME WAS DESTROYED (╯°益°)╯彡┻━┻', 'color: #ef8513');
-}
 
-function computerPlay() {
-  const signs = ['rock', 'paper', 'scissors'];
-  computerSelection = signs[Math.floor(Math.random() * signs.length)];
-  return computerSelection;
-}
+  getScore();
 
-function oneRound(playerSelection, computerSelection) {
-  switch (true) {
-    case (playerSelection == 'rock' && computerSelection == 'scissors'):
-    case (playerSelection == 'paper' && computerSelection == 'rock'):
-    case (playerSelection == 'scissors' && computerSelection == 'paper'):
-      playerScore++;
-      playerScore =+ playerScore;
-    console.log(`Computer's choice is ${computerSelection}.`)
-    console.log(`You won, because ${playerSelection} beats ${computerSelection} (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧`);
-    console.log(`Your score is → ${playerScore} | Computer's score is → ${computerScore}`);
-    return playerScore;
-    case (playerSelection == 'rock' && computerSelection == 'paper'):
-    case (playerSelection == 'paper' && computerSelection == 'scissors'):
-    case (playerSelection == 'scissors' && computerSelection == 'rock'):
-      computerScore++;
-      computerScore =+ computerScore;
-    console.log(`Computer's choice is ${computerSelection}.`)
-    console.log(`You lost, because ${computerSelection} beats ${playerSelection} ｡ﾟ･(>﹏<)･ﾟ｡`);
-    console.log(`Your score is → ${playerScore} | Computer's score is → ${computerScore}`);
-    return computerScore;
-    case (playerSelection == computerSelection):
-      playerScore = playerScore;
+  function playerPlay() {
+    let playerSelection = prompt('∘• rock | paper | scissors •∘').toLowerCase();
+    if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors') {
+      console.log(`Your choice is ${playerSelection}.`)
+      return playerSelection;
+    }
+    console.log(`YOU CAN'T TYPE ${playerSelection}.VALID WORDS ARE  ROCK | PAPER | SCISSORS`);
+    console.log('%cTHIS ROUND OF THE GAME WAS DESTROYED (╯°益°)╯彡┻━┻', 'color: #ef8513');
+  }
+
+  function computerPlay() {
+    const signs = ['rock', 'paper', 'scissors'];
+    computerSelection = signs[Math.floor(Math.random() * signs.length)];
+    return computerSelection;
+  }
+
+  function oneRound(playerSelection, computerSelection) {
+    switch (true) {
+      case (playerSelection == 'rock' && computerSelection == 'scissors'):
+      case (playerSelection == 'paper' && computerSelection == 'rock'):
+      case (playerSelection == 'scissors' && computerSelection == 'paper'):
+        playerScore++;
+        playerScore =+ playerScore;
       console.log(`Computer's choice is ${computerSelection}.`)
-      console.log(`Tie, because both chose ${playerSelection} (-_-;)・・・`);
-      console.log(`Scores remain the same: ${playerScore} | ${computerScore}`);
-      break;
+      console.log(`You won, because ${playerSelection} beats ${computerSelection} (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧`);
+      console.log(`Your score is → ${playerScore} | Computer's score is → ${computerScore}`);
+      return playerScore;
+      case (playerSelection == 'rock' && computerSelection == 'paper'):
+      case (playerSelection == 'paper' && computerSelection == 'scissors'):
+      case (playerSelection == 'scissors' && computerSelection == 'rock'):
+        computerScore++;
+        computerScore =+ computerScore;
+      console.log(`Computer's choice is ${computerSelection}.`)
+      console.log(`You lost, because ${computerSelection} beats ${playerSelection} ｡ﾟ･(>﹏<)･ﾟ｡`);
+      console.log(`Your score is → ${playerScore} | Computer's score is → ${computerScore}`);
+      return computerScore;
+      case (playerSelection == computerSelection):
+        playerScore = playerScore;
+        console.log(`Computer's choice is ${computerSelection}.`)
+        console.log(`Tie, because both chose ${playerSelection} (-_-;)・・・`);
+        console.log(`Scores remain the same: ${playerScore} | ${computerScore}`);
+        break;
+    }
+    return [playerScore, computerScore];
   }
-  return [playerScore, computerScore];
+
+  function getScore() {
+    let result;
+    console.log(`FINAL SCORE: ${playerScore} | ${computerScore}`);
+    if (playerScore > computerScore) {
+      result = console.log('%cYOU WON! TIME TO CELEBRATE °˖✧╰(*´︶`*)╯✧˖°', 'color: #29c979');
+    } else if (playerScore < computerScore) {
+      result = console.log('%cYOU LOST! TIME TO RAGE (ノ°益°)ノ', 'color: #ee2a2a');
+    } else {
+      result = console.log('%cTIE! TRY AGAIN (^◕ᴥ◕^)', 'color: #8353a3');
+    }
+    return result;
+  }
+  return;
 }
-
-let playerScore = 0;
-let computerScore = 0;
-
-oneRound(playerPlay(), computerPlay());

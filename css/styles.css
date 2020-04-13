@@ -1,0 +1,18 @@
+.game {
+  padding-left: 15px;
+}
+
+h1,
+.border {
+  font-weight: bold;
+  color:  #0cf2f2;
+}
+
+.border {
+  padding-right: 5px;
+}
+
+.play {
+  font-weight: bold;
+  color: #ff0080;
+}
