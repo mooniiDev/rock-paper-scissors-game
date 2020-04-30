@@ -3,15 +3,36 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
+    <title>Wand Bow Mace</title>
     <link type="text/css" rel="stylesheet" href="css/normalize.css">
     <link type="text/css" rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/91628b4fa3.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="game">
-      <h1>Rock Paper Scissors</h1>
-      <p><span class="border">|</span>To play the game open console and type <span class="play">play();</p>
-    </div>
+    <header>
+      <h1>
+        <span class="txt-wand">WAND</span>&nbsp;
+        <span class="txt-bow">BOW</span>&nbsp;
+        <span class="txt-mace">MACE</span>
+      </h1>
+      <h2>CHOOSE YOUR WEAPON</span></h2>
+    </header>
+    <main>
+      <!-- Weapons buttons-->
+      <div class="weapons">
+        <button type="submit" class="weapon-btn wand-btn">
+          <i id="first" class="fad fa-wand-magic"></i>
+        </button>
+        <button type="submit" class="weapon-btn bow-btn">
+          <i class="fad fa-bow-arrow"></i>
+        </button>
+        <button type="submit" class="weapon-btn mace-btn">
+          <i class="fad fa-mace"></i>
+        </button>
+      </div>
+    </main>
     <script type="text/javascript" src="scripts.js"></script>
   </body>
 </html>

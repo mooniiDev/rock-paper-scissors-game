@@ -1,73 +1,75 @@
-function play() {
-  let rounds = 0;
-  let playerScore = 0;
-  let computerScore = 0;
+let playerScore = 0;
+let computerScore = 0;
+let round = 0;
+const weaponsButtons = document.querySelectorAll('.weapon-btn');
 
-  while (rounds < 5) {
-    oneRound(playerPlay(), computerPlay());
-    console.log('%c•∘•∘•∘•⋆•∘•∘•∘•', 'color: #ff0080');
-    rounds++;
-  }
+function startGame() {
+  weaponsButtons.forEach((weapon) => {
+    weapon.addEventListener('click', function() {
+      round++;
+      round =+ round;
+      console.log(`ROUND: ${round}`);
+      let playerSelection;
+      if (weapon.classList.contains('wand-btn')) {
+        playerSelection = 'wand';
+      } else if (weapon.classList.contains('bow-btn')) {
+        playerSelection = 'bow';
+      } else {
+        playerSelection = 'mace';
+      }
+      console.log(`Your choice is ${playerSelection}.`);
+      const computerSelection = computerPlay();
+      getScores(playerSelection, computerSelection);
+      endGame(playerScore, computerScore);
+      return;
+    });
+  });
+};
 
-  getScore();
+function computerPlay() {
+  const weapons = ['wand', 'bow', 'mace'];
+  const computerChoice = weapons[Math.floor(Math.random() * weapons.length)];
+  console.log(`Computer's choice is ${computerChoice}.`);
+  return computerChoice;
+};
 
-  function playerPlay() {
-    let playerSelection = prompt('∘• rock | paper | scissors •∘').toLowerCase();
-    if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors') {
-      console.log(`Your choice is ${playerSelection}.`)
-      return playerSelection;
-    }
-    console.log(`YOU CAN'T TYPE ${playerSelection}.VALID WORDS ARE  ROCK | PAPER | SCISSORS`);
-    console.log('%cTHIS ROUND OF THE GAME WAS DESTROYED (╯°益°)╯彡┻━┻', 'color: #ef8513');
-  }
-
-  function computerPlay() {
-    const signs = ['rock', 'paper', 'scissors'];
-    computerSelection = signs[Math.floor(Math.random() * signs.length)];
-    return computerSelection;
-  }
-
-  function oneRound(playerSelection, computerSelection) {
-    switch (true) {
-      case (playerSelection == 'rock' && computerSelection == 'scissors'):
-      case (playerSelection == 'paper' && computerSelection == 'rock'):
-      case (playerSelection == 'scissors' && computerSelection == 'paper'):
-        playerScore++;
-        playerScore =+ playerScore;
-      console.log(`Computer's choice is ${computerSelection}.`)
+function getScores(playerSelection, computerSelection) {
+  switch (true) {
+    case (playerSelection == 'wand' && computerSelection == 'mace'):
+    case (playerSelection == 'bow' && computerSelection == 'wand'):
+    case (playerSelection == 'mace' && computerSelection == 'bow'):
+      playerScore++;
+      playerScore =+ playerScore;
       console.log(`You won, because ${playerSelection} beats ${computerSelection} (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧`);
-      console.log(`Your score is → ${playerScore} | Computer's score is → ${computerScore}`);
-      return playerScore;
-      case (playerSelection == 'rock' && computerSelection == 'paper'):
-      case (playerSelection == 'paper' && computerSelection == 'scissors'):
-      case (playerSelection == 'scissors' && computerSelection == 'rock'):
-        computerScore++;
-        computerScore =+ computerScore;
-      console.log(`Computer's choice is ${computerSelection}.`)
+      break;
+    case (playerSelection == 'wand' && computerSelection == 'bow'):
+    case (playerSelection == 'bow' && computerSelection == 'mace'):
+    case (playerSelection == 'mace' && computerSelection == 'wand'):
+      computerScore++;
+      computerScore =+ computerScore;
       console.log(`You lost, because ${computerSelection} beats ${playerSelection} ｡ﾟ･(>﹏<)･ﾟ｡`);
-      console.log(`Your score is → ${playerScore} | Computer's score is → ${computerScore}`);
-      return computerScore;
-      case (playerSelection == computerSelection):
-        playerScore = playerScore;
-        console.log(`Computer's choice is ${computerSelection}.`)
-        console.log(`Tie, because both chose ${playerSelection} (-_-;)・・・`);
-        console.log(`Scores remain the same: ${playerScore} | ${computerScore}`);
-        break;
-    }
-    return [playerScore, computerScore];
+      break;
+    case (playerSelection == computerSelection):
+      console.log(`Tie, because both chose ${playerSelection} (-_-;)・・・`);
+      break;
   }
+  console.log(`Your score → ${playerScore} | Computer's score → ${computerScore}`);
+  return [playerScore, computerScore];
+};
 
-  function getScore() {
-    let result;
-    console.log(`FINAL SCORE: ${playerScore} | ${computerScore}`);
+function endGame(playerScore, computerScore) {
+  if (playerScore === 3 || computerScore == 3) {
+    console.log(`END OF THE GAME! Final result → ${playerScore} | ${computerScore}`);
     if (playerScore > computerScore) {
-      result = console.log('%cYOU WON! TIME TO CELEBRATE °˖✧╰(*´︶`*)╯✧˖°', 'color: #29c979');
-    } else if (playerScore < computerScore) {
-      result = console.log('%cYOU LOST! TIME TO RAGE (ノ°益°)ノ', 'color: #ee2a2a');
+      console.log('%cYOU WON!', 'color: #29c979');
     } else {
-      result = console.log('%cTIE! TRY AGAIN (^◕ᴥ◕^)', 'color: #8353a3');
-    }
-    return result;
-  }
+      console.log('%cYOU LOST!', 'color: #ee2a2a');
+    };
+    for(let i = 0; i < weaponsButtons.length; i++) {
+      weaponsButtons[i].disabled = true;
+    };
+  };
   return;
-}
+};
+
+startGame();

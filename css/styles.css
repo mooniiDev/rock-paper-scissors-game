@@ -1,18 +1,50 @@
-.game {
-  padding-left: 15px;
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #4d4d4d;
 }
 
-h1,
-.border {
-  font-weight: bold;
-  color:  #0cf2f2;
+header {
+  text-align: center;
 }
 
-.border {
-  padding-right: 5px;
+h1 {
+  font-family: 'Macondo Swash Caps', cursive;
+  font-size: 50px;
+}
+.txt-wand,
+.fa-wand-magic {
+  color: #8070ac;
+}
+.txt-bow,
+.fa-bow-arrow {
+  color: #62b49c;
+}
+.txt-mace,
+.fa-mace {
+  color: #b96b78;
 }
 
-.play {
-  font-weight: bold;
-  color: #ff0080;
+main {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+}
+
+/* Weapons Buttons */
+.weapon-btn {
+  width: 150px;
+  height: 150px;
+  margin: 0 20px;
+  font-size: 60px;
+  background-color: transparent;
+  border-radius: 5px;
+}
+.wand-btn {
+  border: 3px solid #8070ac;
+}
+.bow-btn {
+  border: 3px solid #62b49c;
+}
+.mace-btn {
+  border: 3px solid #b96b78;
 }
