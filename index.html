@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,32 +8,61 @@
     <link type="text/css" rel="stylesheet" href="css/normalize.css">
     <link type="text/css" rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/91628b4fa3.js" crossorigin="anonymous"></script>
   </head>
+
   <body>
-    <header>
+    <header class="gameHeader">
       <h1>
-        <span class="txt-wand">WAND</span>&nbsp;
-        <span class="txt-bow">BOW</span>&nbsp;
-        <span class="txt-mace">MACE</span>
+        <span class="purple-color">WAND</span>&nbsp;
+        <span class="green-color">BOW</span>&nbsp;
+        <span class="red-color">MACE</span>
       </h1>
-      <h2>CHOOSE YOUR WEAPON</span></h2>
+      <p>3 Weapons ︱ 5 Lives ︱ 2 Destinies</p>
     </header>
-    <main>
-      <!-- Weapons buttons-->
-      <div class="weapons">
-        <button type="submit" class="weapon-btn wand-btn">
-          <i id="first" class="fad fa-wand-magic"></i>
+
+    <main class="main-content">
+      <div class="weapons-area">
+        <button class="wand-button weapon-button">
+          <i class="fad fa-wand-magic weapon-icon wand-icon"></i>
         </button>
-        <button type="submit" class="weapon-btn bow-btn">
-          <i class="fad fa-bow-arrow"></i>
+        <button class="bow-button weapon-button">
+          <i class="fad fa-bow-arrow weapon-icon bow-icon"></i>
         </button>
-        <button type="submit" class="weapon-btn mace-btn">
-          <i class="fad fa-mace"></i>
+        <button class="mace-button weapon-button">
+          <i class="fad fa-mace weapon-icon mace-icon"></i>
         </button>
       </div>
+
+      <p class="separator">
+        »»──────▹
+        <span class="purple-color">⋅</span><span class="red-color">｡</span><span class="purple-color">•</span>
+        <span class="green-color">✴</span>
+        <span class="purple-color">•</span><span class="red-color">｡</span><span class="purple-color">⋅</span>
+        ◃──────««
+      </p>
+
+      <div class="game-output">
+        <div class="grey-border">
+          <i class="computer-icon fad fa-skull"></i>
+        </div>
+        <div class="game-results">
+          <p class="round">Round: 0</p>
+          <p class="lives">Your Lives: 5 ︱ Enemy Lives: 5</p>
+          <p class="combat-text">Combat Area: Empty</p>
+        </div>
+      </div>
+
+      <div class="game-end-div">
+        <p class="game-end-text"></p>
+        <button class="play-again">Fight Again!</button>
+      </div>
     </main>
+
+    <footer class="copyright">
+      <p>☽ Crafted by mooniiDev ☾</p>
+    </footer>
     <script type="text/javascript" src="scripts.js"></script>
   </body>
+
 </html>
