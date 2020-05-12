@@ -3,8 +3,7 @@ body {
   color: #5e5e5e;
 }
 
-.gameHeader,
-.separator {
+.gameHeader {
   text-align: center;
   font-size: 25px;
   color: #5e5e5e;
@@ -60,15 +59,10 @@ body {
   transform: none;
 }
 
-/* Colors of Separator */
-.purple-color {
-  color: #8070ac;
-}
-.green-color {
-  color: #62b49c;
-}
-.red-color {
-  color: #b96b78;
+.separator {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
 }
 
 .game-output {
