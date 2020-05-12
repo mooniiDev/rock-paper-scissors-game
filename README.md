@@ -1,6 +1,7 @@
 # The Odin Project Web Development 101
 ## Project: Rock Paper Scissors
 Simple implementation of Rock Paper Scissors game from The Odin Project [curriculum](https://www.theodinproject.com/lessons/rock-paper-scissors).
+
 This is my first **HTML/CSS/JS** project. **Live version** of the game is [here](https://mooniidev.github.io/rock-paper-scissors-game/).
 ### First stage | Game in the browser console
 **The benefits I got from this stage:**
