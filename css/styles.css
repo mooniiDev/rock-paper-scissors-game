@@ -8,6 +8,15 @@ body {
   font-size: 25px;
   color: #5e5e5e;
 }
+.purple-color {
+  color: #8070ac;
+}
+.green-color {
+  color: #62b49c;
+}
+.red-color {
+  color: #b96b78;
+}
 
 .main-content {
   display: flex;
