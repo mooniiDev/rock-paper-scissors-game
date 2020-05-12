@@ -1,0 +1,25 @@
+{
+  "name": "rock-paper-scissors-game",
+  "version": "1.0.0",
+  "description": "Simple implementation of Rock Paper Scissors game from [The Odin Project curriculum](https://www.theodinproject.com/lessons/rock-paper-scissors). **Live version** of the game is [here](https://mooniidev.github.io/rock-paper-scissors-game/). ### First stage | Game in the browser console **The benefits I got from this stage:** * Deepened knowledge of how **functions work** with each other. * Improved **functions organization** and javascript **code readability**. * Learned how to color the **console text**. * Enjoyed stylizing the **prompt** and **console texts**.",
+  "main": "scripts.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mooniiDev/rock-paper-scissors-game.git"
+  },
+  "author": "mooniiDev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mooniiDev/rock-paper-scissors-game/issues"
+  },
+  "homepage": "https://github.com/mooniiDev/rock-paper-scissors-game#readme"
+}

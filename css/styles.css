@@ -112,6 +112,9 @@ body {
 }
 
 /* Game End */
+.opacity {
+  opacity: 0.5;
+}
 .game-end-div {
   text-align: center;
 }

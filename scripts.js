@@ -37,6 +37,12 @@ function countLives(playerSelection, computerSelection) {
   const computerPlayDiv = document.querySelector('.computer-play-div');
 
   switch (true) {
+    case (playerSelection === computerSelection):
+      combatText.innerText = `Hmm.. Two ${playerSelection}s means a draw, so no lives were lost. Let's try again.`;
+      gameOutput.style.border = '4px solid #8070ac';
+      computerPlayDiv.classList.remove('grey-border', 'green-border', 'red-border');
+      computerPlayDiv.classList.add('purple-border');
+      break;
     case (playerSelection === 'wand' && computerSelection === 'mace'):
     case (playerSelection === 'bow' && computerSelection === 'wand'):
     case (playerSelection === 'mace' && computerSelection === 'bow'):
@@ -46,23 +52,13 @@ function countLives(playerSelection, computerSelection) {
       computerPlayDiv.classList.add('green-border');
       computerLives -= 1;
       break;
-    case (playerSelection === 'wand' && computerSelection === 'bow'):
-    case (playerSelection === 'bow' && computerSelection === 'mace'):
-    case (playerSelection === 'mace' && computerSelection === 'wand'):
+    default:
       combatText.innerText = `Unfortunate defeat.. You lost one life, because your ${playerSelection} lacks of power against enemy's ${computerSelection}!`;
       gameOutput.style.border = '4px solid #b96b78';
       computerPlayDiv.classList.remove('grey-border', 'green-border', 'purple-border');
       computerPlayDiv.classList.add('red-border');
       playerLives -= 1;
       break;
-    case (playerSelection === computerSelection):
-      combatText.innerText = `Hmm.. Two ${playerSelection}s means a draw, so no lives were lost. Let's try again.`;
-      gameOutput.style.border = '4px solid #8070ac';
-      computerPlayDiv.classList.remove('grey-border', 'green-border', 'red-border');
-      computerPlayDiv.classList.add('purple-border');
-      break;
-      default:
-        return;
   }
 
   const lives = document.querySelector('.lives');
@@ -72,11 +68,10 @@ function countLives(playerSelection, computerSelection) {
 
 function endGame(playerHealth, computerHealth) {
   if (playerHealth === 0 || computerHealth === 0) {
-    for (let i = 0; i < weaponsButtons.length; i++) {
-      weaponsButtons[i].disabled = true;
-      weaponsButtons[i].classList.add('disabled-button');
-      weaponsButtons[i].style.opacity = '0.5';
-    }
+    weaponsButtons.forEach((button) => {
+      button.setAttribute('disabled', '');
+      button.classList.add('disabled-button', 'opacity');
+    });
 
     const computerIcon = document.querySelector('.computer-icon');
     computerIcon.style.opacity = '0.5';
