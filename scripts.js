@@ -18,7 +18,7 @@ function computerPlay() {
   const computerSelection = weapons[Math.floor(Math.random() * weapons.length)];
   const computerIcon = document.querySelector('.computer-icon');
 
-  computerIcon.classList.remove('fa-skull');
+  computerIcon.classList.remove('fa-skull', 'fa-wand-magic', 'fa-bow-arrow', 'fa-mace');
   if (computerSelection === 'wand') {
     computerIcon.classList.add('fa-wand-magic');
     computerIcon.style.color = '#8070ac';
