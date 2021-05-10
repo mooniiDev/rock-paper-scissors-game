@@ -43,12 +43,13 @@ body {
   margin: 50px 0;
   color: #5e5e5e;
   font-size: 70px;
-  transition: all .3s linear;
+  transition: all .3s;
 }
 .weapon-icon:hover {
   cursor: pointer;
   -webkit-transform: scale(1.3);
-  transform: scale(1.3);
+  transform: scale(1.1);
+  transition: all .3s;
 }
 .wand-icon:hover {
   color: #8070ac !important;
@@ -130,11 +131,12 @@ body {
   border: 4px solid #5e5e5e;
   border-radius: 5px;
   background-color: transparent;
-  transition: all .2s linear;
+  transition: all .3s;
 }
 .play-again:hover {
   cursor: pointer;
   transform: scale(1.05);
+  transition: all .3s;
 }
 
 /* Footer */
