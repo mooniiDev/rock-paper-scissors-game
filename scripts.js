@@ -78,11 +78,11 @@ function endGame(playerHealth, computerHealth) {
 
     const gameEndText = document.querySelector('.game-end-text');
     if (playerLives > computerLives) {
-      combatText.innerText = 'Hehe, poor enemy has no life left.. He barely holds himself in one piece.';
+      combatText.innerText = 'Hehe, poor enemy has no lives left.. He barely holds himself in one piece.';
       gameEndText.textContent = 'You Won This Battle!';
       gameEndText.style.color = '#62b49c';
     } else {
-      combatText.innerText = 'Ouch.. No life left for you. Enjoy the mocking laughter of the enemy.';
+      combatText.innerText = 'Ouch.. No lives left for you. Enjoy the mocking laughter of the enemy.';
       gameEndText.textContent = 'You Lost This Battle!';
       gameEndText.style.color = '#b96b78';
     }

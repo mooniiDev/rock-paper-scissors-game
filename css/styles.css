@@ -132,11 +132,11 @@ body {
   border-radius: 5px;
   background-color: transparent;
   transition: all .3s;
+  cursor: pointer;
 }
 .play-again:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-  transition: all .3s;
+  background-color: #5e5e5e;
+  color: #fff;
 }
 
 /* Footer */
