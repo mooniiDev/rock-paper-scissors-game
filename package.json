@@ -4,9 +4,9 @@
   "description": "Simple implementation of Rock Paper Scissors game from [The Odin Project curriculum](https://www.theodinproject.com/lessons/rock-paper-scissors). **Live version** of the game is [here](https://mooniidev.github.io/rock-paper-scissors-game/). ### First stage | Game in the browser console **The benefits I got from this stage:** * Deepened knowledge of how **functions work** with each other. * Improved **functions organization** and javascript **code readability**. * Learned how to color the **console text**. * Enjoyed stylizing the **prompt** and **console texts**.",
   "main": "scripts.js",
   "devDependencies": {
-    "eslint": "^8.12.0",
+    "eslint": "^8.31.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.4"
+    "eslint-plugin-import": "^2.26.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
